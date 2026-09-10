@@ -2,21 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#070910">
+<meta name="description" content="Premium AI Access registration — 1,200 ETB via Telebirr.">
 <title>AI Pro Access | Registration</title>
 <style>
-:root{--bg:#070910;--card:rgba(17,21,33,.82);--line:#293145;--muted:#9aa4b8;--text:#f8fafc;--purple:#8b5cf6;--blue:#3b82f6}
+:root{--bg:#070910;--card:rgba(17,21,33,.85);--line:#293145;--muted:#9aa4b8;--text:#f8fafc;--purple:#8b5cf6;--blue:#3b82f6;--green:#22c55e}
 *{box-sizing:border-box}
-body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--text);background:
-radial-gradient(circle at 15% 0%,#35206d55,transparent 34%),
-radial-gradient(circle at 90% 12%,#07598544,transparent 30%),var(--bg);min-height:100vh}
-.container{max-width:760px;margin:auto;padding:22px 15px 55px}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:
+radial-gradient(circle at 15% 0%,#35206d66,transparent 36%),
+radial-gradient(circle at 90% 12%,#07598555,transparent 32%),
+radial-gradient(circle at 50% 100%,#1e1b4b55,transparent 40%),var(--bg);min-height:100vh;background-attachment:fixed}
+.container{max-width:760px;margin:auto;padding:22px 15px calc(55px + env(safe-area-inset-bottom))}
 .hero{text-align:center;padding:32px 10px 22px}
-.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border:1px solid #8b5cf655;background:#8b5cf614;color:#c4b5fd;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:.6px}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border:1px solid #8b5cf655;background:#8b5cf614;color:#c4b5fd;border-radius:99px;font-size:12px;font-weight:800;letter-spacing:1.5px}
 h1{font-size:clamp(38px,10vw,62px);line-height:.98;letter-spacing:-3px;margin:20px 0 16px}
 .gradient{background:linear-gradient(90deg,#c4b5fd,#60a5fa,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{max-width:590px;margin:auto;color:var(--muted);font-size:16px;line-height:1.65}
-.card{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:25px;background:var(--card);backdrop-filter:blur(18px);box-shadow:0 22px 70px #0006}
+.card{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:25px;background:var(--card);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 22px 70px #0006}
 .price-card{text-align:center;border-color:#8b5cf655;background:linear-gradient(145deg,#7c3aed25,#101521e8)}
 .kicker{color:#9da7ba;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.3px}
 .price{font-size:52px;font-weight:950;letter-spacing:-3px;margin:3px 0 15px}
@@ -27,21 +31,33 @@ h1{font-size:clamp(38px,10vw,62px);line-height:.98;letter-spacing:-3px;margin:20
 .icon{font-size:22px}
 h2{font-size:21px;margin:0 0 13px}
 .payment{background:linear-gradient(145deg,#16a34a12,#10151ee8);border-color:#22c55e4d}
-.number{font-size:31px;font-weight:950;letter-spacing:1px;margin:3px 0 7px}
+.badge{display:inline-block;padding:5px 11px;border-radius:99px;background:#22c55e1f;color:#86efac;border:1px solid #22c55e55;font-size:12px;font-weight:800;margin-bottom:10px}
+.number{font-size:31px;font-weight:950;letter-spacing:1px;margin:3px 0 7px;word-break:break-all}
+.copy{display:inline-flex;align-items:center;gap:6px;margin:4px 0 12px;padding:8px 14px;border-radius:99px;border:1px solid #22c55e66;background:#0d1a13;color:#bbf7d0;font-size:13px;font-weight:700;cursor:pointer}
+.copy:active{transform:scale(.97)}
+.steps{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+.steps li{display:flex;gap:11px;align-items:flex-start;color:#c7cfdd;font-size:14px;line-height:1.5}
+.steps .n{flex:0 0 26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#2563eb);display:grid;place-items:center;font-size:12px;font-weight:900}
 .note{color:#9ca7b8;font-size:13px;line-height:1.55}
 .screenshot{text-align:center}
-.screenshot img{display:block;width:100%;max-width:430px;max-height:620px;object-fit:contain;margin:12px auto 0;border-radius:18px;border:1px solid #343c4d;box-shadow:0 15px 45px #0007}
+.screenshot img{display:block;width:100%;max-width:430px;max-height:620px;object-fit:contain;margin:12px auto 0;border-radius:18px;border:1px solid #343c4d;box-shadow:0 15px 45px #0007;background:#0d1119}
 .caption{font-size:11px;color:#788398;margin-top:10px}
 .formhead{margin-bottom:4px}
 label{display:block;font-size:13px;font-weight:800;margin:17px 0 8px}
-input{width:100%;padding:15px 16px;border:1px solid #30394b;background:#090d14;color:white;border-radius:14px;outline:0;font-size:15px}
+input{width:100%;padding:15px 16px;border:1px solid #30394b;background:#090d14;color:#fff;border-radius:14px;outline:0;font-size:16px;-webkit-appearance:none;appearance:none}
+input::placeholder{color:#5b6577}
 input:focus{border-color:var(--purple);box-shadow:0 0 0 4px #8b5cf61a}
-button{width:100%;border:0;border-radius:15px;padding:17px;margin-top:23px;color:white;font-size:16px;font-weight:900;background:linear-gradient(100deg,#7c3aed,#2563eb);box-shadow:0 12px 35px #4f46e544;cursor:pointer}
-button:hover{transform:translateY(-1px)}
+input:user-invalid{border-color:#ef4444}
+.hint{font-size:12px;color:#7f899c;margin-top:6px}
+button[type=submit]{width:100%;border:0;border-radius:15px;padding:17px;margin-top:23px;color:#fff;font-size:16px;font-weight:900;background:linear-gradient(100deg,#7c3aed,#2563eb);box-shadow:0 12px 35px #4f46e555;cursor:pointer;transition:transform .15s,opacity .15s;min-height:54px}
+button[type=submit]:hover{transform:translateY(-1px)}
+button[type=submit]:disabled{opacity:.7;cursor:progress}
 .trust{text-align:center;color:#667186;font-size:11px;line-height:1.5;margin-top:12px}
-.success{display:none;text-align:center;padding:20px 0 4px}.success .check{font-size:45px}.success p{color:var(--muted);line-height:1.6}
+.alert{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid #22c55e66;background:#16a34a1f;color:#bbf7d0;font-size:14px;line-height:1.55}
+.alert.show{display:block}
 footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.card{padding:20px}.price{font-size:45px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.card{padding:18px;border-radius:20px}.price{font-size:45px}.number{font-size:27px}.hero{padding-top:20px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
 <body>
@@ -64,46 +80,91 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
   </div>
 </section>
 
-<section class="card payment">
+<section class="card payment" id="pay">
+  <div class="badge">Payment Method: Telebirr</div>
   <h2>💳 Pay with Telebirr</h2>
-  <div class="number">0936719379</div>
+  <div class="kicker">Telebirr Number</div>
+  <div class="number" id="telebirr">0936719379</div>
+  <a class="copy" href="tel:0936719379" id="copyBtn">📋 Copy number</a>
   <div class="note">Send <strong>1,200 ETB</strong> to the number above, then submit your registration details below.</div>
+  <ol class="steps">
+    <li><span class="n">1</span><span>Open Telebirr and send <strong>1,200 ETB</strong> to <strong>0936719379</strong>.</span></li>
+    <li><span class="n">2</span><span>Copy the transaction / reference number from your Telebirr receipt.</span></li>
+    <li><span class="n">3</span><span>Fill in the registration form below and submit.</span></li>
+  </ol>
 </section>
 
 <section class="card screenshot">
   <h2>📸 Payment Reference</h2>
-  <img src="payment-screenshot.jpg" alt="Telebirr transaction reference screenshot">
+  <img src="Screenshot_20260910_202130_telebirr.jpg" alt="Telebirr transaction reference screenshot" loading="lazy" width="430" height="620">
   <div class="caption">Example payment screenshot provided by the seller. Enter your own transaction number when registering.</div>
 </section>
 
-<section class="card">
+<section class="card" id="register">
   <h2 class="formhead">Complete Your Registration</h2>
   <div class="note">After payment, enter accurate details so your registration can be reviewed.</div>
 
+  <div class="alert" id="successAlert" role="status">✅ <strong>Registration received!</strong> Thank you — your details have been submitted and will be reviewed shortly.</div>
+
   <!-- Direct POST to Formspree: no JavaScript required -->
-  <form action="https://formspree.io/f/xdeobgva" method="POST">
+  <form action="https://formspree.io/f/xdeobgva" method="POST" id="regForm">
     <label for="name">Full Name</label>
     <input id="name" name="full_name" type="text" placeholder="Your full name" autocomplete="name" required>
 
     <label for="github">GitHub Username</label>
-    <input id="github" name="github_username" type="text" placeholder="e.g. alazar123" autocomplete="off" pattern="[A-Za-z0-9-]+" required>
+    <input id="github" name="github_username" type="text" placeholder="e.g. alazar123" autocomplete="off" autocapitalize="none" spellcheck="false" pattern="[A-Za-z0-9-]+" title="Letters, numbers and hyphens only" required>
+    <div class="hint">Letters, numbers and hyphens only.</div>
 
     <label for="phone">Phone Number</label>
-    <input id="phone" name="phone_number" type="tel" placeholder="09xxxxxxxx" autocomplete="tel" required>
+    <input id="phone" name="phone_number" type="tel" inputmode="tel" placeholder="09xxxxxxxx" autocomplete="tel" required>
 
     <label for="transaction">Telebirr Transaction / Reference Number</label>
-    <input id="transaction" name="telebirr_transaction" type="text" placeholder="Your transaction/reference number" required>
+    <input id="transaction" name="telebirr_transaction" type="text" placeholder="Your transaction/reference number" autocapitalize="characters" spellcheck="false" required>
 
     <input type="hidden" name="amount" value="1200 ETB">
     <input type="hidden" name="payment_method" value="Telebirr">
+    <input type="hidden" name="telebirr_number" value="0936719379">
     <input type="hidden" name="_subject" value="New AI Access Registration — 1,200 ETB">
+    <input type="hidden" name="_next" id="nextUrl" value="">
+    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
-    <button type="submit">🚀 Submit Registration</button>
-    <div class="trust">🔒 Your submitted registration is sent to the configured Formspree endpoint.</div>
+    <button type="submit" id="submitBtn">🚀 Submit Registration</button>
+    <div class="trust">🔒 Your registration is sent securely via Formspree. You will see a confirmation after submitting.</div>
   </form>
 </section>
 
 <footer>AI Pro Access • Registration</footer>
 </div>
+
+<script>
+(function(){
+  // Redirect back to our own thank-you page after Formspree accepts the submission.
+  // If JavaScript is disabled, Formspree's default confirmation page is shown instead.
+  var base = location.href.split('#')[0].split('?')[0].replace(/index\.html$/, '');
+  var next = document.getElementById('nextUrl');
+  if (next && /^https?:/.test(base)) next.value = base + 'thank-you.html';
+  else if (next) next.remove(); // avoid sending an invalid _next when opened from file://
+
+  // Show inline success message if returning with ?submitted=1
+  if (/[?&]submitted=1/.test(location.search)) {
+    var a = document.getElementById('successAlert');
+    if (a) { a.classList.add('show'); a.scrollIntoView({behavior:'smooth', block:'center'}); }
+  }
+
+  // Prevent double submits (plain HTML POST still happens)
+  var form = document.getElementById('regForm'), btn = document.getElementById('submitBtn');
+  if (form && btn) form.addEventListener('submit', function(){ btn.disabled = true; btn.textContent = 'Submitting…'; });
+
+  // Copy Telebirr number
+  var copy = document.getElementById('copyBtn');
+  if (copy && navigator.clipboard) copy.addEventListener('click', function(e){
+    e.preventDefault();
+    navigator.clipboard.writeText('0936719379').then(function(){
+      copy.textContent = '✅ Copied 0936719379';
+      setTimeout(function(){ copy.textContent = '📋 Copy number'; }, 2000);
+    });
+  });
+})();
+</script>
 </body>
 </html>
