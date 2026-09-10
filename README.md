@@ -13,7 +13,7 @@ A static, mobile-friendly registration page for premium AI access.
 |------|---------|
 | `index.html` | Landing page, pricing, Telebirr payment info and registration form |
 | `thank-you.html` | Confirmation page shown after a successful Formspree submission |
-| `Screenshot_20260910_202130_telebirr.jpg` | Example Telebirr payment screenshot |
+| `ai-access-promo.png` | Promotional image displayed between the hero and pricing sections |
 
 ## Deploy on GitHub Pages
 
