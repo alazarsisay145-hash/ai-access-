@@ -17,6 +17,10 @@ A static, mobile-friendly registration page for premium AI access.
 
 ## Deploy on GitHub Pages
 
+Deployment is automated with GitHub Actions (`.github/workflows/deploy.yml`): every push to `main` publishes the site to GitHub Pages. It can also be triggered manually from the **Actions** tab.
+
+One-time setup:
+
 1. Go to **Settings → Pages**.
-2. Set **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`.
+2. Set **Source** to *GitHub Actions*.
 3. Open `https://<username>.github.io/<repo>/`.
