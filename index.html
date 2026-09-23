@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#070910">
-<meta name="description" content="Premium AI Access registration — 1,500 ETB via Telebirr.">
+<meta name="description" content="Premium AI Access registration — Monthly, Quarterly, Yearly and Lifetime plans via Telebirr.">
 <title>AI Pro Access | Registration</title>
 <style>
 :root{--bg:#070910;--card:rgba(17,21,33,.85);--line:#293145;--muted:#9aa4b8;--text:#f8fafc;--purple:#8b5cf6;--blue:#3b82f6;--green:#22c55e}
@@ -23,17 +23,26 @@ h1{font-size:clamp(38px,10vw,62px);line-height:.98;letter-spacing:-3px;margin:20
 .card{margin-top:18px;padding:24px;border:1px solid var(--line);border-radius:25px;background:var(--card);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 22px 70px #0006}
 .price-card{text-align:center;border-color:#8b5cf655;background:linear-gradient(145deg,#7c3aed25,#101521e8)}
 .kicker{color:#9da7ba;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:1.3px}
-.price{font-size:52px;font-weight:950;letter-spacing:-3px;margin:3px 0 15px}
-.price span{font-size:17px;letter-spacing:0;color:#aab3c2}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;text-align:left}
 .feature{padding:15px;border:1px solid #2a3142;background:#0d1119;border-radius:16px}
 .feature b{display:block;font-size:14px;margin-top:4px}.feature small{color:#7f899c}
 .icon{font-size:22px}
 h2{font-size:21px;margin:0 0 13px}
+.plans{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:15px 0 18px}
+.plan{position:relative;cursor:pointer}
+.plan input{position:absolute;opacity:0;width:0;height:0;padding:0}
+.plan .box{display:block;padding:16px 14px;border:1px solid #2a3142;background:#0d1119;border-radius:16px;text-align:center;transition:border-color .15s,box-shadow .15s}
+.plan .box b{display:block;font-size:14px;color:#c7cfdd;margin-bottom:5px}
+.plan .box .amt{font-size:22px;font-weight:950;letter-spacing:-1px}
+.plan .box .amt span{font-size:12px;font-weight:700;color:#aab3c2;letter-spacing:0}
+.plan .box small{display:block;color:#7f899c;font-size:11px;margin-top:5px}
+.plan input:checked + .box{border-color:var(--purple);box-shadow:0 0 0 3px #8b5cf633;background:linear-gradient(145deg,#7c3aed25,#101521e8)}
+.plan .tag{position:absolute;top:-9px;left:50%;transform:translateX(-50%);padding:2px 10px;border-radius:99px;font-size:10px;font-weight:900;letter-spacing:.5px;background:linear-gradient(100deg,#7c3aed,#2563eb);color:#fff;white-space:nowrap}
+.plan .tag.gold{background:linear-gradient(100deg,#f59e0b,#ef4444)}
 .payment{background:linear-gradient(145deg,#16a34a12,#10151ee8);border-color:#22c55e4d}
 .badge{display:inline-block;padding:5px 11px;border-radius:99px;background:#22c55e1f;color:#86efac;border:1px solid #22c55e55;font-size:12px;font-weight:800;margin-bottom:10px}
 .number{font-size:31px;font-weight:950;letter-spacing:1px;margin:3px 0 7px;word-break:break-all}
-.copy{display:inline-flex;align-items:center;gap:6px;margin:4px 0 12px;padding:8px 14px;border-radius:99px;border:1px solid #22c55e66;background:#0d1a13;color:#bbf7d0;font-size:13px;font-weight:700;cursor:pointer}
+.copy{display:inline-flex;align-items:center;gap:6px;margin:4px 0 12px;padding:8px 14px;border-radius:99px;border:1px solid #22c55e66;background:#0d1a13;color:#bbf7d0;font-size:13px;font-weight:700;text-decoration:none}
 .copy:active{transform:scale(.97)}
 .steps{margin:14px 0 0;padding:0;list-style:none;display:grid;gap:9px}
 .steps li{display:flex;gap:11px;align-items:flex-start;color:#c7cfdd;font-size:14px;line-height:1.5}
@@ -48,14 +57,14 @@ input::placeholder{color:#5b6577}
 input:focus{border-color:var(--purple);box-shadow:0 0 0 4px #8b5cf61a}
 input:user-invalid{border-color:#ef4444}
 .hint{font-size:12px;color:#7f899c;margin-top:6px}
-button[type=submit]{width:100%;border:0;border-radius:15px;padding:17px;margin-top:23px;color:#fff;font-size:16px;font-weight:900;background:linear-gradient(100deg,#7c3aed,#2563eb);box-shadow:0 12px 35px #4f46e555;cursor:pointer;transition:transform .15s,opacity .15s;min-height:54px}
+button[type=submit]{width:100%;border:0;border-radius:15px;padding:17px;margin-top:23px;color:#fff;font-size:16px;font-weight:900;background:linear-gradient(100deg,#7c3aed,#2563eb);box-shadow:0 12px 30px #7c3aed44;cursor:pointer;transition:transform .15s}
 button[type=submit]:hover{transform:translateY(-1px)}
 button[type=submit]:disabled{opacity:.7;cursor:progress}
 .trust{text-align:center;color:#667186;font-size:11px;line-height:1.5;margin-top:12px}
 .alert{display:none;margin-top:16px;padding:14px 16px;border-radius:14px;border:1px solid #22c55e66;background:#16a34a1f;color:#bbf7d0;font-size:14px;line-height:1.55}
 .alert.show{display:block}
 footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
-@media(max-width:520px){.grid{grid-template-columns:1fr}.card{padding:18px;border-radius:20px}.price{font-size:45px}.number{font-size:27px}.hero{padding-top:20px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr 1fr}.card{padding:18px;border-radius:20px}.number{font-size:27px}.hero{padding-top:20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
 </head>
@@ -73,8 +82,27 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
 </section>
 
 <section class="card price-card">
-  <div class="kicker">Access Price</div>
-  <div class="price">1,500 <span>ETB</span></div>
+  <div class="kicker">Choose Your Plan</div>
+  <div class="plans" id="plans">
+    <label class="plan">
+      <input type="radio" name="planPick" value="Monthly — 1,500 ETB" data-amount="1,500 ETB">
+      <span class="box"><b>Monthly</b><span class="amt">1,500 <span>ETB</span></span><small>Billed every month</small></span>
+    </label>
+    <label class="plan">
+      <input type="radio" name="planPick" value="Quarterly — 3,200 ETB" data-amount="3,200 ETB">
+      <span class="box"><b>Quarterly</b><span class="amt">3,200 <span>ETB</span></span><small>3 months • Save vs monthly</small></span>
+    </label>
+    <label class="plan">
+      <span class="tag">BEST VALUE</span>
+      <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-amount="8,000 ETB" checked>
+      <span class="box"><b>Yearly</b><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving</small></span>
+    </label>
+    <label class="plan">
+      <span class="tag gold">PAY ONCE</span>
+      <input type="radio" name="planPick" value="Lifetime — 22,000 ETB" data-amount="22,000 ETB">
+      <span class="box"><b>Lifetime</b><span class="amt">22,000 <span>ETB</span></span><small>One-time payment • Forever access</small></span>
+    </label>
+  </div>
   <div class="grid">
     <div class="feature"><span class="icon">🤖</span><b>Multiple AI Models</b><small>Choose the right model for your task</small></div>
     <div class="feature"><span class="icon">💻</span><b>Advanced Coding</b><small>Build, debug and understand code</small></div>
@@ -89,11 +117,12 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
   <div class="kicker">Telebirr Number</div>
   <div class="number" id="telebirr">0936719379</div>
   <a class="copy" href="tel:0936719379" id="copyBtn">📋 Copy number</a>
-  <div class="note">Send <strong>1,500 ETB</strong> to the number above, then submit your registration details below.</div>
+  <div class="note">Send <strong id="payAmount">8,000 ETB</strong> for your selected plan (<strong id="payPlan">Yearly</strong>) to the number above, then submit your registration details below.</div>
   <ol class="steps">
-    <li><span class="n">1</span><span>Open Telebirr and send <strong>1,500 ETB</strong> to <strong>0936719379</strong>.</span></li>
-    <li><span class="n">2</span><span>Copy the transaction / reference number from your Telebirr receipt.</span></li>
-    <li><span class="n">3</span><span>Fill in the registration form below and submit.</span></li>
+    <li><span class="n">1</span><span>Choose your plan above — Monthly <strong>1,500 ETB</strong>, Quarterly <strong>3,200 ETB</strong>, Yearly <strong>8,000 ETB</strong>, or Lifetime <strong>22,000 ETB</strong>.</span></li>
+    <li><span class="n">2</span><span>Open Telebirr and send the plan amount to <strong>0936719379</strong>.</span></li>
+    <li><span class="n">3</span><span>Copy the transaction / reference number from your Telebirr receipt.</span></li>
+    <li><span class="n">4</span><span>Fill in the registration form below and submit.</span></li>
   </ol>
 </section>
 
@@ -118,10 +147,11 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
     <label for="transaction">Telebirr Transaction / Reference Number</label>
     <input id="transaction" name="telebirr_transaction" type="text" placeholder="Your transaction/reference number" autocapitalize="characters" spellcheck="false" required>
 
-    <input type="hidden" name="amount" value=" monthy 1500 ETB quarterly 3200 ETB YEARLY 8000ETB">
+    <input type="hidden" name="selected_plan" id="selectedPlan" value="Yearly — 8,000 ETB">
+    <input type="hidden" name="amount" id="amountField" value="8,000 ETB">
     <input type="hidden" name="payment_method" value="Telebirr">
     <input type="hidden" name="telebirr_number" value="0936719379">
-    <input type="hidden" name="_subject" value="New AI Access Registration — choose you plan and register now !">
+    <input type="hidden" name="_subject" value="New AI Access Registration — choose your plan and register now!">
     <input type="hidden" name="_next" id="nextUrl" value="">
     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
@@ -147,6 +177,24 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
     var a = document.getElementById('successAlert');
     if (a) { a.classList.add('show'); a.scrollIntoView({behavior:'smooth', block:'center'}); }
   }
+
+  // Plan selection: sync selected plan into payment instructions and hidden form fields
+  var radios = document.querySelectorAll('input[name="planPick"]');
+  var planField = document.getElementById('selectedPlan');
+  var amountField = document.getElementById('amountField');
+  var payAmount = document.getElementById('payAmount');
+  var payPlan = document.getElementById('payPlan');
+  function syncPlan(r){
+    if (!r) return;
+    if (planField) planField.value = r.value;
+    if (amountField) amountField.value = r.getAttribute('data-amount');
+    if (payAmount) payAmount.textContent = r.getAttribute('data-amount');
+    if (payPlan) payPlan.textContent = r.value.split(' — ')[0];
+  }
+  radios.forEach(function(r){
+    r.addEventListener('change', function(){ syncPlan(r); });
+    if (r.checked) syncPlan(r);
+  });
 
   // Prevent double submits (plain HTML POST still happens)
   var form = document.getElementById('regForm'), btn = document.getElementById('submitBtn');
