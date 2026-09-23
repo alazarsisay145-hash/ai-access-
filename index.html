@@ -57,10 +57,16 @@ h2{font-size:21px;margin:0 0 13px}
 .perks .em{flex:0 0 auto;font-size:20px;line-height:1.2}
 .perks b{color:#f8fafc}
 .perks small{display:block;color:#8b96aa;margin-top:3px}
-.tg{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:12px 20px;border-radius:14px;border:1px solid #22d3ee66;background:linear-gradient(100deg,#0891b2,#2563eb);color:#fff;font-size:14px;font-weight:900;text-decoration:none;box-shadow:0 10px 26px #0891b244}
-.tg:active{transform:scale(.98)}
 .stat{display:inline-block;padding:4px 10px;border-radius:99px;background:#22d3ee1f;color:#a5f3fc;border:1px solid #22d3ee55;font-size:11px;font-weight:800;margin-left:6px}
 .lock{display:inline-block;padding:4px 10px;border-radius:99px;background:#f59e0b1f;color:#fcd34d;border:1px solid #f59e0b55;font-size:11px;font-weight:800;margin-left:6px}
+.models{border-color:#60a5fa55;background:linear-gradient(145deg,#1d4ed825,#101521e8)}
+.model-list{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.model-list li{display:flex;gap:12px;align-items:flex-start;padding:14px 15px;border:1px solid #2a3142;background:#0d1119;border-radius:16px;font-size:14px;line-height:1.55;color:#c7cfdd}
+.model-list .em{flex:0 0 auto;font-size:20px;line-height:1.2}
+.model-list b{color:#f8fafc}
+.model-list small{display:block;color:#8b96aa;margin-top:3px}
+.best{display:inline-block;padding:3px 9px;border-radius:99px;background:#8b5cf61f;color:#c4b5fd;border:1px solid #8b5cf655;font-size:10px;font-weight:800;margin-left:6px;letter-spacing:.5px}
+.why{border-color:#f59e0b55;background:linear-gradient(145deg,#b4530925,#101521e8)}
 .formhead{margin-bottom:4px}
 label{display:block;font-size:13px;font-weight:800;margin:17px 0 8px}
 input{width:100%;padding:15px 16px;border:1px solid #30394b;background:#090d14;color:#fff;border-radius:14px;outline:0;font-size:16px;-webkit-appearance:none;appearance:none}
@@ -118,12 +124,38 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
   </div>
 </section>
 
+<section class="card models" id="models">
+  <div class="kicker">Included AI Models</div>
+  <h2>🤖 All AI Models You Get — And What Each Does Best</h2>
+  <div class="note">One subscription, every top model. Switch instantly between them and always use the best AI for the job.</div>
+  <ul class="model-list">
+    <li><span class="em">🟣</span><span><b>Claude Fable 5.1</b> <span class="best">BEST FOR: LONG-FORM &amp; CODE REVIEW</span><small>Exceptional at deep code reviews, refactoring large codebases, nuanced long-form writing and following complex multi-step instructions with precision.</small></span></li>
+    <li><span class="em">🟪</span><span><b>Claude Opus 5</b> <span class="best">BEST FOR: COMPLEX REASONING</span><small>The heavyweight for hard problems — advanced mathematics, research-grade analysis, architecture design and tasks that demand careful, step-by-step reasoning.</small></span></li>
+    <li><span class="em">🟢</span><span><b>GPT-6 ASTRA</b> <span class="best">BEST FOR: CODING &amp; AGENTS</span><small>Blazing-fast general intelligence with top-tier code generation, debugging, tool use and agentic workflows — perfect for building and shipping features quickly.</small></span></li>
+    <li><span class="em">🔵</span><span><b>Gemini 3.5</b> <span class="best">BEST FOR: MULTIMODAL &amp; RESEARCH</span><small>Class-leading multimodal understanding — analyze images, documents, charts and video, plus massive-context research across huge document sets.</small></span></li>
+    <li><span class="em">🎨</span><span><b>Canva AI Magic Suite</b> <span class="best">BEST FOR: DESIGN &amp; VISUALS</span><small>Magic Design, Magic Write, background remover, brand kits and 100M+ premium assets — turn ideas into polished pitch decks and product visuals in minutes.</small></span></li>
+  </ul>
+</section>
+
+<section class="card why" id="why">
+  <div class="kicker">Why Choose Us</div>
+  <h2>⭐ Why Choose Youth Campus Ethiopia?</h2>
+  <ul class="perks">
+    <li><span class="em">💰</span><span><b>Unbeatable Local Pricing</b><small>Get the full enterprise AI stack starting at just 1,000 ETB/month — a fraction of the cost of buying these subscriptions separately with a foreign credit card.</small></span></li>
+    <li><span class="em">📱</span><span><b>Pay Easily with Telebirr</b><small>No credit card, no PayPal, no foreign currency needed. Pay in birr with the Telebirr app you already use every day.</small></span></li>
+    <li><span class="em">🇪🇹</span><span><b>Built for Ethiopian Devs &amp; Creators</b><small>We understand campus life, local internet realities and the Ethiopian tech scene — support and community in your context, in your time zone.</small></span></li>
+    <li><span class="em">🤝</span><span><b>Real Community, Real Support</b><small>100+ paying members on Telegram sharing code reviews, job leads, hackathon teams, freelancing tips and design assets — you're never stuck alone.</small></span></li>
+    <li><span class="em">🚀</span><span><b>Everything in One Place</b><small>GitHub Enterprise seat + all top AI models + Canva Pro — one payment, one registration, one login for your entire dev and design workflow.</small></span></li>
+    <li><span class="em">⚡</span><span><b>Fast Activation</b><small>Register, pay via Telebirr, and get verified quickly — your access and private Telegram invite are delivered right after payment verification.</small></span></li>
+  </ul>
+</section>
+
 <section class="card price-card">
   <div class="kicker">Choose Your Plan</div>
   <div class="plans" id="plans">
     <label class="plan">
-      <input type="radio" name="planPick" value="Monthly — 1,500 ETB" data-amount="1,500 ETB">
-      <span class="box"><b>Monthly</b><span class="amt">1,500 <span>ETB</span></span><small>Billed every month</small></span>
+      <input type="radio" name="planPick" value="Monthly — 1,000 ETB" data-amount="1,000 ETB">
+      <span class="box"><b>Monthly</b><span class="amt">1,000 <span>ETB</span></span><small>Billed every month</small></span>
     </label>
     <label class="plan">
       <input type="radio" name="planPick" value="Quarterly — 3,200 ETB" data-amount="3,200 ETB">
@@ -157,7 +189,7 @@ footer{text-align:center;color:#505a6c;font-size:11px;margin-top:24px}
   <a class="copy" href="tel:0936719379" id="copyBtn">📋 Copy number</a>
   <div class="note">Send <strong id="payAmount">8,000 ETB</strong> for your selected plan (<strong id="payPlan">Yearly</strong>) to the number above, then submit your registration details below.</div>
   <ol class="steps">
-    <li><span class="n">1</span><span>Choose your plan above — Monthly <strong>1,500 ETB</strong>, Quarterly <strong>3,200 ETB</strong>, Yearly <strong>8,000 ETB</strong>, or Lifetime <strong>22,000 ETB</strong>.</span></li>
+    <li><span class="n">1</span><span>Choose your plan above — Monthly <strong>1,000 ETB</strong>, Quarterly <strong>3,200 ETB</strong>, Yearly <strong>8,000 ETB</strong>, or Lifetime <strong>22,000 ETB</strong>.</span></li>
     <li><span class="n">2</span><span>Open Telebirr and send the plan amount to <strong>0936719379</strong>.</span></li>
     <li><span class="n">3</span><span>Copy the transaction / reference number from your Telebirr receipt.</span></li>
     <li><span class="n">4</span><span>Fill in the registration form below and submit — once your payment is verified, you'll receive your private Telegram community invite. <strong>No payment, no Telegram access.</strong></span></li>
