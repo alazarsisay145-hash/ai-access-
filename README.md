@@ -4,7 +4,7 @@ A static, mobile-friendly registration page for premium AI access.
 
 - **Price:** 1,500 ETB
 - **Payment:** Telebirr — `0936719379`
-- **Form handling:** [Formspree](https://formspree.io/f/xdeobgva) (plain HTML `POST`, no backend)
+- **Form handling:** [Formspree](https://formspree.io/f/mbgljzwr) (plain HTML `POST`, no backend)
 - **Hosting:** GitHub Pages (`index.html` is the entry point)
 
 ## Files
