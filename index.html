@@ -248,8 +248,8 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
 <footer>
   Youth Campus Ethiopia • AI Pro Access • Registration
-<span class="visitor-counter" id="visitorCounter" hidden role="status" aria-live="polite">Views: Loading…</span>
-<noscript><span class="visitor-counter">Views: <span class="sr-only">Total page views shown in the image counter</span><img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="" aria-hidden="true" loading="lazy"></span></noscript>
+<span class="visitor-counter" id="visitorCounter" role="status" aria-live="polite">Views: Loading…</span>
+<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Views: <span class="sr-only">Total page views shown in the image counter</span><img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="" aria-hidden="true" loading="lazy"></span></noscript>
 </footer>
 </div>
 
@@ -315,7 +315,6 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   });
 
   var visitorCounter = document.getElementById('visitorCounter');
-  if (visitorCounter) visitorCounter.hidden = false;
   if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Views: Unavailable';
   if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
