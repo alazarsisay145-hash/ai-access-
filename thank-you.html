@@ -18,6 +18,8 @@ h1{font-size:clamp(26px,7vw,36px);letter-spacing:-1px;margin:0 0 10px}
 p{color:var(--muted);line-height:1.65;font-size:15px;margin:0 0 10px}
 .box{margin:20px 0;padding:14px;border-radius:14px;background:#0d1119;border:1px solid #2a3142;text-align:left;font-size:14px;line-height:1.7}
 a.btn{display:inline-block;margin-top:8px;padding:14px 24px;border-radius:14px;color:#fff;text-decoration:none;font-weight:900;background:linear-gradient(100deg,#7c3aed,#2563eb);box-shadow:0 12px 35px #4f46e555}
+.visitor-counter{margin-top:16px;color:var(--muted);font-size:12px}
+.visitor-counter img{height:20px;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -32,7 +34,23 @@ a.btn{display:inline-block;margin-top:8px;padding:14px 24px;border-radius:14px;c
     • Keep your Telebirr receipt in case it is needed.
   </div>
   <a class="btn" href="./index.html?submitted=1">← Back to Home</a>
+  <div class="visitor-counter" id="visitorCounter" aria-live="polite" aria-atomic="true">Site views: Loading…</div>
+  <noscript><style>#visitorCounter{display:none}</style><div class="visitor-counter">Site views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total site views counter" loading="lazy"></div></noscript>
 </main>
+<script>
+(function(){
+  var visitorCounter = document.getElementById('visitorCounter');
+  if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Site views: Unavailable';
+  if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
+    return r.ok ? r.json() : Promise.reject();
+  }).then(function(data){
+    var rawCount = data && (data.count_unique != null ? data.count_unique : data.count);
+    var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
+    if (count !== null) visitorCounter.textContent = 'Site views: ' + count.toLocaleString();
+    else visitorCounter.textContent = 'Site views: Unavailable';
+  }).catch(function(){ visitorCounter.textContent = 'Site views: Unavailable'; });
+})();
+</script>
 <script data-goatcounter="https://ai-access.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>

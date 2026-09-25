@@ -318,7 +318,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
-    var rawCount = data && (data.count_unique ?? data.count);
+    var rawCount = data && (data.count_unique != null ? data.count_unique : data.count);
     var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
     if (count !== null) visitorCounter.textContent = 'Site views: ' + count.toLocaleString();
     else visitorCounter.textContent = 'Site views: Unavailable';
