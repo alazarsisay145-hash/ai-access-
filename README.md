@@ -30,5 +30,5 @@ This site includes GoatCounter, a free privacy-friendly analytics service with n
 3. Replace `https://ai-access.goatcounter.com/count` in:
    - `index.html`
    - `thank-you.html`
-4. If you also want the visible footer counter on the home page to use your site code, replace `https://ai-access.goatcounter.com/counter/TOTAL.svg` in `index.html`.
+4. If you also want the visible footer counter on the home page to use your site code, replace both `https://ai-access.goatcounter.com/counter/TOTAL.json` and `https://ai-access.goatcounter.com/counter/TOTAL.svg` in `index.html`.
 5. View the analytics dashboard at `https://<your-site-code>.goatcounter.com` after visits start being recorded. If you keep the placeholder code, the dashboard URL is `https://ai-access.goatcounter.com`.
