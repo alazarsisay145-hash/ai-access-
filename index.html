@@ -78,6 +78,8 @@ button[type=submit]:disabled{opacity:.7;cursor:progress}
 .alert{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;border:1px solid #86efac;background:#f0fdf4;color:#15803d;font-size:14px;line-height:1.55}
 .alert.show{display:block}
 footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
+.visitor-counter{display:block;margin-top:8px}
+.visitor-counter img{height:20px;vertical-align:middle}
 @media(max-width:520px){.grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr 1fr}.card{padding:18px;border-radius:16px}.number{font-size:27px}.hero{padding-top:20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
@@ -243,7 +245,11 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   </form>
 </section>
 
-<footer>Youth Campus Ethiopia • AI Pro Access • Registration</footer>
+<footer>
+  Youth Campus Ethiopia • AI Pro Access • Registration
+<span class="visitor-counter" id="visitorCounter" aria-live="polite" aria-atomic="true">Site views: Loading…</span>
+<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Site views: unavailable without JavaScript.</span></noscript>
+</footer>
 </div>
 
 <script>
@@ -306,7 +312,20 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       setTimeout(function(){ copy.textContent = '📋 Copy number'; }, 2000);
     });
   });
+
+  var visitorCounter = document.getElementById('visitorCounter');
+  if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Site views: Unavailable';
+  var counterUrl = 'https://ai-access.goatcounter.com/counter/TOTAL.json?ts=' + Date.now();
+  if (visitorCounter && window.fetch) fetch(counterUrl, {mode:'cors'}).then(function(r){
+    return r.ok ? r.json() : Promise.reject();
+  }).then(function(data){
+    var rawCount = data && data.count;
+    var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
+    if (count !== null) visitorCounter.textContent = 'Site views: ' + count.toLocaleString();
+    else visitorCounter.textContent = 'Site views: Unavailable';
+  }).catch(function(){ visitorCounter.textContent = 'Site views: Unavailable'; });
 })();
 </script>
+<script data-goatcounter="https://ai-access.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
