@@ -225,8 +225,8 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
     <div id="studentIdWrap" hidden aria-hidden="true" aria-live="polite">
       <label for="studentId">Student ID Number</label>
-      <input id="studentId" name="student_id" type="text" placeholder="Your university or college student ID" autocomplete="off" spellcheck="false">
-      <div class="hint">A valid university or college student ID is required for the Student pass and may be verified.</div>
+      <input id="studentId" name="student_id" type="text" placeholder="Your university or college student ID" autocomplete="off" spellcheck="false" aria-describedby="studentIdHint">
+      <div class="hint" id="studentIdHint">A valid university or college student ID is required for the Student pass and may be verified.</div>
     </div>
 
     <input type="hidden" name="selected_plan" id="selectedPlan" value="Yearly — 8,000 ETB">
