@@ -30,10 +30,8 @@ This site includes GoatCounter, a free privacy-friendly analytics service with n
 3. In `index.html`, replace all GoatCounter URLs so they use the same site code:
    - `https://ai-access.goatcounter.com/count`
    - `https://ai-access.goatcounter.com/counter/TOTAL.json`
-   - `https://ai-access.goatcounter.com/counter/TOTAL.svg`
 4. In `thank-you.html`, replace all GoatCounter URLs so they use the same site code:
    - `https://ai-access.goatcounter.com/count`
    - `https://ai-access.goatcounter.com/counter/TOTAL.json`
-   - `https://ai-access.goatcounter.com/counter/TOTAL.svg`
 5. The visible counter uses GoatCounter's site-wide `TOTAL` counter endpoints, so it shows total site views rather than only views for a single page.
 6. To view analytics, sign in at [goatcounter.com](https://www.goatcounter.com) and open the dashboard for your site code. If you keep the placeholder code in this repo, its tracking domain is `https://ai-access.goatcounter.com`.
