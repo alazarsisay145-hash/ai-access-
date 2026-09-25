@@ -223,8 +223,8 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
     <label for="transaction">Telebirr Transaction / Reference Number</label>
     <input id="transaction" name="telebirr_transaction" type="text" placeholder="Your transaction/reference number" autocapitalize="characters" spellcheck="false" required>
 
-    <div id="studentIdWrap" hidden aria-hidden="true" aria-live="polite">
-      <label for="studentId">Student ID Number</label>
+    <div id="studentIdWrap" hidden aria-hidden="true" aria-live="polite" role="group" aria-labelledby="studentIdLabel" aria-describedby="studentIdHint">
+      <label for="studentId" id="studentIdLabel">Student ID Number</label>
       <input id="studentId" name="student_id" type="text" placeholder="Your university or college student ID" autocomplete="off" spellcheck="false" aria-describedby="studentIdHint">
       <div class="hint" id="studentIdHint">A valid university or college student ID is required for the Student pass and may be verified.</div>
     </div>
@@ -269,7 +269,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   var studentIdWrap = document.getElementById('studentIdWrap');
   var studentIdField = document.getElementById('studentId');
   var studentPlanRadio = document.querySelector('input[name="planPick"][data-plan="student"]');
-  function syncPlan(r, shouldFocusStudentField){
+  function syncPlan(r){
     if (!r) return;
     if (planField) planField.value = r.value;
     if (amountField) amountField.value = r.getAttribute('data-amount');
@@ -284,12 +284,11 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       studentIdField.required = isStudent;
       studentIdField.disabled = !isStudent;
       if (!isStudent) studentIdField.value = '';
-      else if (shouldFocusStudentField) studentIdField.focus();
     }
     if (studentPlanRadio) studentPlanRadio.setAttribute('aria-expanded', isStudent ? 'true' : 'false');
   }
   radios.forEach(function(r){
-    r.addEventListener('change', function(){ syncPlan(r, true); });
+    r.addEventListener('change', function(){ syncPlan(r); });
     if (r.checked) syncPlan(r);
   });
 
