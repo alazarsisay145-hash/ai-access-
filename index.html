@@ -247,7 +247,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
 <footer>
   Youth Campus Ethiopia • AI Pro Access • Registration
-<span class="visitor-counter" id="visitorCounter" hidden><span id="visitorCountLabel">Views:</span> <span id="visitorCount" aria-live="polite" aria-label="Total page views">Loading…</span></span>
+<span class="visitor-counter" id="visitorCounter" hidden role="status" aria-live="polite">Views: Loading…</span>
 <noscript><span class="visitor-counter">Views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total page views" loading="lazy"></span></noscript>
 </footer>
 </div>
@@ -315,14 +315,14 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
   var visitorCounter = document.getElementById('visitorCounter');
   if (visitorCounter) visitorCounter.hidden = false;
-  var visitorCount = document.getElementById('visitorCount');
-  if (visitorCount && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
+  if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Views: Unavailable';
+  if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
     var count = data && typeof data.count === 'number' ? data.count : null;
-    if (count !== null) visitorCount.textContent = count.toLocaleString();
-    else visitorCount.textContent = 'Unavailable';
-  }).catch(function(){ visitorCount.textContent = 'Unavailable'; });
+    if (count !== null) visitorCounter.textContent = 'Views: ' + count.toLocaleString();
+    else visitorCounter.textContent = 'Views: Unavailable';
+  }).catch(function(){ visitorCounter.textContent = 'Views: Unavailable'; });
 })();
 </script>
 <script data-goatcounter="https://ai-access.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
