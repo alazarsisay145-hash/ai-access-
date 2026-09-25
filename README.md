@@ -20,3 +20,14 @@ A static, mobile-friendly registration page for premium AI access.
 1. Go to **Settings → Pages**.
 2. Set **Source** to *Deploy from a branch*, branch `main`, folder `/ (root)`.
 3. Open `https://<username>.github.io/<repo>/`.
+
+## Visitor analytics with GoatCounter
+
+This site includes GoatCounter, a free privacy-friendly analytics service with no cookies.
+
+1. Sign up at [goatcounter.com](https://www.goatcounter.com) and create a site code for your Pages site.
+2. If you want to use a different site code than the placeholder `ai-access`, replace `https://ai-access.goatcounter.com/count` in:
+   - `index.html`
+   - `thank-you.html`
+3. If you also want the visible footer counter on the home page to use your site code, replace `https://ai-access.goatcounter.com/counter/TOTAL.svg` in `index.html`.
+4. View the analytics dashboard at `https://ai-access.goatcounter.com` after visits start being recorded.
