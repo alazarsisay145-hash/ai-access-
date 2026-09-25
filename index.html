@@ -228,6 +228,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       <input id="studentId" name="student_id" type="text" placeholder="Your university or college student ID" autocomplete="off" spellcheck="false" aria-describedby="studentIdHint">
       <div class="hint" id="studentIdHint">A valid university or college student ID is required for the Student pass and may be verified.</div>
     </div>
+    <div id="studentPlanStatus" role="status" aria-live="polite" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"></div>
 
     <input type="hidden" name="selected_plan" id="selectedPlan" value="Yearly — 8,000 ETB">
     <input type="hidden" name="amount" id="amountField" value="8,000 ETB">
@@ -269,6 +270,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   var studentIdWrap = document.getElementById('studentIdWrap');
   var studentIdField = document.getElementById('studentId');
   var studentPlanRadio = document.querySelector('input[name="planPick"][data-plan="student"]');
+  var studentPlanStatus = document.getElementById('studentPlanStatus');
   function syncPlan(r){
     if (!r) return;
     if (planField) planField.value = r.value;
@@ -285,6 +287,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       studentIdField.disabled = !isStudent;
       if (!isStudent) studentIdField.value = '';
     }
+    if (studentPlanStatus) studentPlanStatus.textContent = isStudent ? 'Student plan selected. Student ID Number is now required.' : '';
     if (studentPlanRadio) studentPlanRadio.setAttribute('aria-expanded', isStudent ? 'true' : 'false');
   }
   radios.forEach(function(r){
