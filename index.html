@@ -313,18 +313,6 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
     });
   });
 
-  // Mirror the visible GoatCounter image value into accessible text.
-  var counterText = document.getElementById('visitorCountText');
-  if (counterText && window.fetch && window.DOMParser) fetch('https://ai-access.goatcounter.com/counter/TOTAL.svg').then(function(r){
-    return r.ok ? r.text() : Promise.reject();
-  }).then(function(svg){
-    var doc = new DOMParser().parseFromString(svg, 'image/svg+xml');
-    var texts = Array.prototype.map.call(doc.querySelectorAll('text'), function(node){
-      return (node.textContent || '').trim();
-    }).filter(Boolean).reverse();
-    var count = texts.find(function(text){ return /[0-9]/.test(text); });
-    if (count) counterText.textContent = 'Total page views: ' + count;
-  }).catch(function(){});
 })();
 </script>
 <script data-goatcounter="https://ai-access.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
