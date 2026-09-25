@@ -156,7 +156,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
     </label>
     <label class="plan">
       <span class="tag">STUDENTS</span>
-      <input type="radio" name="planPick" value="Student — 700 ETB" data-plan="student" data-amount="700 ETB" aria-controls="studentIdWrap" aria-expanded="false">
+      <input type="radio" name="planPick" value="Student — 700 ETB" data-plan="student" data-amount="700 ETB" aria-controls="studentIdWrap">
       <span class="box"><b>Student</b><span class="amt">700 <span>ETB</span></span><small>Per month • Student ID required</small></span>
     </label>
     <label class="plan">
@@ -269,7 +269,6 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   var payPlan = document.getElementById('payPlan');
   var studentIdWrap = document.getElementById('studentIdWrap');
   var studentIdField = document.getElementById('studentId');
-  var studentPlanRadio = document.querySelector('input[name="planPick"][data-plan="student"]');
   var studentPlanStatus = document.getElementById('studentPlanStatus');
   function syncPlan(r){
     if (!r) return;
@@ -288,7 +287,6 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       if (!isStudent) studentIdField.value = '';
     }
     if (studentPlanStatus) studentPlanStatus.textContent = isStudent ? 'Student plan selected. Student ID Number is now required.' : '';
-    if (studentPlanRadio) studentPlanRadio.setAttribute('aria-expanded', isStudent ? 'true' : 'false');
   }
   radios.forEach(function(r){
     r.addEventListener('change', function(){ syncPlan(r); });
