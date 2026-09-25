@@ -247,7 +247,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
 <footer>
   Youth Campus Ethiopia • AI Pro Access • Registration
-<span class="visitor-counter" id="visitorCounter" role="status" aria-live="polite">Views: Loading…</span>
+<span class="visitor-counter" id="visitorCounter" role="status">Views: Loading…</span>
 <noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total page views counter" loading="lazy"></span></noscript>
 </footer>
 </div>
@@ -318,7 +318,8 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
-    var count = data && typeof data.count === 'number' ? data.count : null;
+    var rawCount = data && data.count;
+    var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
     if (count !== null) visitorCounter.textContent = 'Views: ' + count.toLocaleString();
     else visitorCounter.textContent = 'Views: Unavailable';
   }).catch(function(){ visitorCounter.textContent = 'Views: Unavailable'; });
