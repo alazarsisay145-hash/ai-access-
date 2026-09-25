@@ -269,7 +269,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   var studentIdWrap = document.getElementById('studentIdWrap');
   var studentIdField = document.getElementById('studentId');
   var studentPlanRadio = document.querySelector('input[name="planPick"][data-plan="student"]');
-  function syncPlan(r){
+  function syncPlan(r, shouldFocusStudentField){
     if (!r) return;
     if (planField) planField.value = r.value;
     if (amountField) amountField.value = r.getAttribute('data-amount');
@@ -280,11 +280,16 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
       studentIdWrap.hidden = !isStudent;
       studentIdWrap.setAttribute('aria-hidden', isStudent ? 'false' : 'true');
     }
-    if (studentIdField) studentIdField.required = isStudent;
+    if (studentIdField) {
+      studentIdField.required = isStudent;
+      studentIdField.disabled = !isStudent;
+      if (!isStudent) studentIdField.value = '';
+      else if (shouldFocusStudentField) studentIdField.focus();
+    }
     if (studentPlanRadio) studentPlanRadio.setAttribute('aria-expanded', isStudent ? 'true' : 'false');
   }
   radios.forEach(function(r){
-    r.addEventListener('change', function(){ syncPlan(r); });
+    r.addEventListener('change', function(){ syncPlan(r, true); });
     if (r.checked) syncPlan(r);
   });
 
