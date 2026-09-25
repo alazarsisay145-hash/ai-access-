@@ -151,26 +151,26 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   <div class="kicker">Choose Your Plan</div>
   <div class="plans" id="plans">
     <label class="plan">
-      <input type="radio" name="planPick" value="Monthly — 1,000 ETB" data-amount="1,000 ETB">
+      <input type="radio" name="planPick" value="Monthly — 1,000 ETB" data-plan="monthly" data-amount="1,000 ETB">
       <span class="box"><b>Monthly</b><span class="amt">1,000 <span>ETB</span></span><small>Billed every month</small></span>
     </label>
     <label class="plan">
       <span class="tag">STUDENTS</span>
-      <input type="radio" name="planPick" value="Student — 700 ETB" data-amount="700 ETB">
+      <input type="radio" name="planPick" value="Student — 700 ETB" data-plan="student" data-amount="700 ETB" aria-controls="studentIdWrap" aria-expanded="false">
       <span class="box"><b>Student</b><span class="amt">700 <span>ETB</span></span><small>Per month • Student ID required</small></span>
     </label>
     <label class="plan">
-      <input type="radio" name="planPick" value="Quarterly — 2,300 ETB" data-amount="2,300 ETB">
+      <input type="radio" name="planPick" value="Quarterly — 2,300 ETB" data-plan="quarterly" data-amount="2,300 ETB">
       <span class="box"><b>Quarterly</b><span class="amt">2,300 <span>ETB</span></span><small>3 months • Save vs monthly</small></span>
     </label>
     <label class="plan">
       <span class="tag">BEST VALUE</span>
-      <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-amount="8,000 ETB" checked>
+      <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-plan="yearly" data-amount="8,000 ETB" checked>
       <span class="box"><b>Yearly</b><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving</small></span>
     </label>
     <label class="plan">
       <span class="tag gold">PAY ONCE</span>
-      <input type="radio" name="planPick" value="Lifetime — 22,000 ETB" data-amount="22,000 ETB">
+      <input type="radio" name="planPick" value="Lifetime — 22,000 ETB" data-plan="lifetime" data-amount="22,000 ETB">
       <span class="box"><b>Lifetime</b><span class="amt">22,000 <span>ETB</span></span><small>One-time payment • Forever access</small></span>
     </label>
   </div>
@@ -223,7 +223,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
     <label for="transaction">Telebirr Transaction / Reference Number</label>
     <input id="transaction" name="telebirr_transaction" type="text" placeholder="Your transaction/reference number" autocapitalize="characters" spellcheck="false" required>
 
-    <div id="studentIdWrap" hidden>
+    <div id="studentIdWrap" hidden aria-hidden="true" aria-live="polite">
       <label for="studentId">Student ID Number</label>
       <input id="studentId" name="student_id" type="text" placeholder="Your university or college student ID" autocomplete="off" spellcheck="false">
       <div class="hint">A valid university or college student ID is required for the Student pass and may be verified.</div>
@@ -268,15 +268,20 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   var payPlan = document.getElementById('payPlan');
   var studentIdWrap = document.getElementById('studentIdWrap');
   var studentIdField = document.getElementById('studentId');
+  var studentPlanRadio = document.querySelector('input[name="planPick"][data-plan="student"]');
   function syncPlan(r){
     if (!r) return;
     if (planField) planField.value = r.value;
     if (amountField) amountField.value = r.getAttribute('data-amount');
     if (payAmount) payAmount.textContent = r.getAttribute('data-amount');
     if (payPlan) payPlan.textContent = r.value.split(' — ')[0];
-    var isStudent = r.value.indexOf('Student — ') === 0;
-    if (studentIdWrap) studentIdWrap.hidden = !isStudent;
+    var isStudent = r.getAttribute('data-plan') === 'student';
+    if (studentIdWrap) {
+      studentIdWrap.hidden = !isStudent;
+      studentIdWrap.setAttribute('aria-hidden', isStudent ? 'false' : 'true');
+    }
     if (studentIdField) studentIdField.required = isStudent;
+    if (studentPlanRadio) studentPlanRadio.setAttribute('aria-expanded', isStudent ? 'true' : 'false');
   }
   radios.forEach(function(r){
     r.addEventListener('change', function(){ syncPlan(r); });
