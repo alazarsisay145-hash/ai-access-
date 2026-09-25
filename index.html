@@ -247,8 +247,8 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 
 <footer>
   Youth Campus Ethiopia • AI Pro Access • Registration
-<span class="visitor-counter" id="visitorCounter" role="status">Views: Loading…</span>
-<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total page views counter" loading="lazy"></span></noscript>
+<span class="visitor-counter" id="visitorCounter" aria-live="polite" aria-atomic="true">Site views: Loading…</span>
+<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Site views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total site views counter" loading="lazy"></span></noscript>
 </footer>
 </div>
 
@@ -314,15 +314,15 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   });
 
   var visitorCounter = document.getElementById('visitorCounter');
-  if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Views: Unavailable';
+  if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Site views: Unavailable';
   if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
     var rawCount = data && data.count;
     var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
-    if (count !== null) visitorCounter.textContent = 'Views: ' + count.toLocaleString();
-    else visitorCounter.textContent = 'Views: Unavailable';
-  }).catch(function(){ visitorCounter.textContent = 'Views: Unavailable'; });
+    if (count !== null) visitorCounter.textContent = 'Site views: ' + count.toLocaleString();
+    else visitorCounter.textContent = 'Site views: Unavailable';
+  }).catch(function(){ visitorCounter.textContent = 'Site views: Unavailable'; });
 })();
 </script>
 <script data-goatcounter="https://ai-access.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>

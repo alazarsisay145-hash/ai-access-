@@ -33,4 +33,5 @@ This site includes GoatCounter, a free privacy-friendly analytics service with n
    - `https://ai-access.goatcounter.com/counter/TOTAL.svg`
 4. In `thank-you.html`, replace:
    - `https://ai-access.goatcounter.com/count`
-5. To view analytics, sign in at [goatcounter.com](https://www.goatcounter.com) and open the dashboard for your site code. If you keep the placeholder code in this repo, its tracking domain is `https://ai-access.goatcounter.com`.
+5. The footer counter in `index.html` uses GoatCounter's site-wide `TOTAL` counter endpoints, so it shows total site views rather than only views for the home page.
+6. To view analytics, sign in at [goatcounter.com](https://www.goatcounter.com) and open the dashboard for your site code. If you keep the placeholder code in this repo, its tracking domain is `https://ai-access.goatcounter.com`.
