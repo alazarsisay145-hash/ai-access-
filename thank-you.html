@@ -41,7 +41,8 @@ a.btn{display:inline-block;margin-top:8px;padding:14px 24px;border-radius:14px;c
 (function(){
   var visitorCounter = document.getElementById('visitorCounter');
   if (visitorCounter && !window.fetch) visitorCounter.textContent = 'Site views: Unavailable';
-  if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
+  var counterUrl = 'https://ai-access.goatcounter.com/counter/TOTAL.json?ts=' + Date.now();
+  if (visitorCounter && window.fetch) fetch(counterUrl, {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
     var rawCount = data && data.count;
