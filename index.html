@@ -80,7 +80,6 @@ button[type=submit]:disabled{opacity:.7;cursor:progress}
 footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 .visitor-counter{display:block;margin-top:8px}
 .visitor-counter img{height:20px;vertical-align:middle}
-.visitor-counter iframe{height:20px;width:96px;border:0;vertical-align:middle}
 @media(max-width:520px){.grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr 1fr}.card{padding:18px;border-radius:16px}.number{font-size:27px}.hero{padding-top:20px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 </style>
@@ -249,7 +248,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
 <footer>
   Youth Campus Ethiopia • AI Pro Access • Registration
 <span class="visitor-counter" id="visitorCounter" aria-live="polite" aria-atomic="true">Site views: Loading…</span>
-<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Site views: <iframe src="https://ai-access.goatcounter.com/counter/TOTAL.svg" title="Total site views counter" loading="lazy"></iframe></span></noscript>
+<noscript><style>#visitorCounter{display:none}</style><span class="visitor-counter">Site views: <img src="https://ai-access.goatcounter.com/counter/TOTAL.svg" alt="Total site views counter" loading="lazy"></span></noscript>
 </footer>
 </div>
 
@@ -319,7 +318,7 @@ footer{text-align:center;color:#9ca3af;font-size:11px;margin-top:24px}
   if (visitorCounter && window.fetch) fetch('https://ai-access.goatcounter.com/counter/TOTAL.json', {mode:'cors'}).then(function(r){
     return r.ok ? r.json() : Promise.reject();
   }).then(function(data){
-    var rawCount = data && data.count;
+    var rawCount = data && (data.count_unique ?? data.count);
     var count = typeof rawCount === 'number' ? rawCount : (typeof rawCount === 'string' && rawCount.trim() !== '' && !isNaN(rawCount) ? Number(rawCount) : null);
     if (count !== null) visitorCounter.textContent = 'Site views: ' + count.toLocaleString();
     else visitorCounter.textContent = 'Site views: Unavailable';
