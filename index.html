@@ -79,6 +79,7 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.03em;mar
 .stat{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(34,211,238,.2);color:#ecfeff;border:1px solid rgba(165,243,252,.35);font-size:11px;font-weight:800;margin-left:6px}
 .lock{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(251,191,36,.18);color:#fef3c7;border:1px solid rgba(252,211,77,.35);font-size:11px;font-weight:800;margin-left:6px}
 .best{display:inline-block;padding:3px 9px;border-radius:999px;background:rgba(139,92,246,.24);color:#f5f3ff;border:1px solid rgba(221,214,254,.32);font-size:10px;font-weight:800;margin-left:6px;letter-spacing:.5px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .formhead{margin-bottom:6px}
 label{display:block;font-size:13px;font-weight:800;margin:18px 0 9px;color:#eff6ff;letter-spacing:.01em}
 input{width:100%;padding:15px 16px;color:var(--text);border-radius:18px;outline:0;font-size:16px;-webkit-appearance:none;appearance:none;background:rgba(15,23,42,.3);transition:border-color .24s ease,box-shadow .24s ease,background .24s ease,transform .24s ease}
@@ -196,10 +197,10 @@ footer{text-align:center;color:#dbeafe;font-size:11px;padding:22px 20px;border-r
       <span class="box"><b>Quarterly</b><span class="amt">2,300 <span>ETB</span></span><small>3 months • Save vs monthly</small></span>
     </label>
     <label class="plan popular-plan">
-      <span class="tag" id="yearlyBestValue">BEST VALUE</span>
-      <span class="popular-badge" id="yearlyPopular">Popular</span>
-      <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-plan="yearly" data-amount="8,000 ETB" aria-describedby="yearlyBestValue yearlyPopular" checked>
-      <span class="box"><b>Yearly</b><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving</small></span>
+      <span class="tag" aria-hidden="true">BEST VALUE</span>
+      <span class="popular-badge" aria-hidden="true">Popular</span>
+      <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-plan="yearly" data-amount="8,000 ETB" checked>
+      <span class="box"><b>Yearly</b><span class="sr-only">Best value. Popular plan.</span><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving</small></span>
     </label>
     <label class="plan">
       <span class="tag gold">PAY ONCE</span>
