@@ -50,7 +50,7 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.03em;mar
 .plan .box .amt{font-size:30px;font-weight:900;letter-spacing:-.05em;color:var(--text)}
 .plan .box .amt span{font-size:13px;font-weight:700;color:#dbeafe;letter-spacing:0}
 .plan .box small{display:block;color:var(--muted);font-size:12px;margin-top:6px;line-height:1.5}
-.plan:hover .box,.plan:focus-within .box,.feature:hover,.perks li:hover,.model-list li:hover{transform:translateY(-6px);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.1));border-color:var(--line-strong);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),var(--glow)}
+.plan:hover .box,.plan:focus-within .box,.feature:hover,.feature:focus-within,.perks li:hover,.perks li:focus-within,.model-list li:hover,.model-list li:focus-within{transform:translateY(-6px);background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,.1));border-color:var(--line-strong);box-shadow:inset 0 1px 0 rgba(255,255,255,.26),var(--glow)}
 .plan:focus-within .box{outline:2px solid rgba(255,255,255,.92);outline-offset:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.26),var(--glow),0 0 0 5px rgba(56,189,248,.14)}
 .plan input:checked + .box{border-color:rgba(214,188,255,.9);box-shadow:0 0 0 3px rgba(196,181,253,.18),inset 0 1px 0 rgba(255,255,255,.25),var(--shadow-soft);background:linear-gradient(180deg,rgba(191,219,254,.2),rgba(167,139,250,.16))}
 .plan .tag{position:absolute;top:-11px;left:18px;padding:5px 12px;border-radius:999px;font-size:10px;font-weight:900;letter-spacing:.75px;background:linear-gradient(100deg,#8b5cf6,#38bdf8);color:#fff;white-space:nowrap}
@@ -60,7 +60,7 @@ h2{font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;letter-spacing:-.03em;mar
 .badge{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(74,222,128,.2);color:#dcfce7;border:1px solid rgba(134,239,172,.42);font-size:12px;font-weight:800;margin-bottom:12px}
 .number{font-size:34px;font-weight:900;letter-spacing:.04em;margin:6px 0 8px;word-break:break-all;color:var(--text)}
 .copy{display:inline-flex;align-items:center;gap:8px;margin:6px 0 12px;padding:10px 16px;border-radius:999px;color:#dcfce7;font-size:13px;font-weight:700;text-decoration:none;transition:transform .24s ease,background .24s ease,filter .24s ease,box-shadow .24s ease}
-.copy:hover,button[type=submit]:hover{filter:brightness(1.08)}
+.copy:hover,button[type=submit]:hover,button[type=submit]:focus-visible{filter:brightness(1.08)}
 .copy:hover,.copy:focus-visible{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.24),0 18px 44px rgba(34,197,94,.14)}
 .copy:focus-visible{outline:2px solid rgba(255,255,255,.92);outline-offset:3px}
 .copy:active,button[type=submit]:active{transform:translateY(1px) scale(.985)}
