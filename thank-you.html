@@ -6,34 +6,50 @@
 <meta name="theme-color" content="#120d2b">
 <meta name="robots" content="noindex">
 <title>Registration Received | AI Pro Access</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090b1d;--muted:#d2daf3;--text:#f8fafc;--surface:rgba(255,255,255,.14);--surface-strong:rgba(255,255,255,.18);--line:rgba(255,255,255,.26);--shadow:0 8px 32px rgba(0,0,0,.24);--fallback:rgba(17,24,39,.9)}
+:root{--bg:#060816;--muted:#d5def7;--text:#f8fbff;--surface:rgba(17,25,46,.42);--surface-strong:rgba(255,255,255,.16);--line:rgba(255,255,255,.16);--shadow:0 28px 80px rgba(3,7,18,.42);--shadow-soft:0 18px 45px rgba(7,10,31,.24);--fallback:rgba(14,23,45,.92)}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:
-radial-gradient(circle at 15% 0%,#8b5cf688,transparent 34%),
-radial-gradient(circle at 90% 12%,#06b6d477,transparent 30%),
-radial-gradient(circle at 20% 85%,#f9731677,transparent 28%),
-linear-gradient(145deg,#060816 0%,#0d1126 48%,#151b38 100%);position:relative;overflow:hidden}
-body::before,body::after{content:"";position:fixed;pointer-events:none;filter:blur(28px);opacity:.78}
-body::before{width:280px;height:280px;top:10%;left:-80px;background:radial-gradient(circle,#60a5fa 0,#60a5fa55 38%,transparent 72%)}
-body::after{width:320px;height:320px;right:-100px;bottom:4%;background:radial-gradient(circle,#f472b6 0,#f472b655 40%,transparent 72%)}
-.card,.box,a.btn{border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-.card{position:relative;z-index:1;width:100%;max-width:520px;text-align:center;padding:36px 26px;border-radius:25px}
-.check{width:78px;height:78px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:38px;background:rgba(34,197,94,.2);border:1px solid rgba(134,239,172,.4);box-shadow:0 8px 24px rgba(0,0,0,.2);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
-h1{font-size:clamp(26px,7vw,36px);letter-spacing:-1px;margin:0 0 10px;text-shadow:0 10px 24px rgba(15,23,42,.3)}
-p{color:var(--muted);line-height:1.7;font-size:15px;margin:0 0 10px}
-.box{margin:20px 0;padding:14px;border-radius:16px;background:var(--surface-strong);text-align:left;font-size:14px;line-height:1.7}
-a.btn{display:inline-block;margin-top:8px;padding:14px 24px;border-radius:16px;color:#fff;text-decoration:none;font-weight:900;background:linear-gradient(100deg,rgba(139,92,246,.84),rgba(56,189,248,.82));transition:transform .18s ease,filter .18s ease}
-a.btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.visitor-counter{margin-top:16px;color:var(--muted);font-size:12px}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:20px;font-family:"Plus Jakarta Sans","Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at top left,rgba(155,107,255,.18),transparent 30%),radial-gradient(circle at top right,rgba(86,199,255,.15),transparent 26%),radial-gradient(circle at bottom left,rgba(255,116,200,.15),transparent 24%),linear-gradient(145deg,#040611 0%,#0a1125 42%,#101a39 100%);position:relative;overflow:hidden}
+a{color:inherit}
+.bg-orbs{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:999px;filter:blur(14px);opacity:.8;mix-blend-mode:screen;animation:drift 24s ease-in-out infinite alternate}
+.orb::after{content:"";position:absolute;inset:8%;border-radius:inherit;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.34),transparent 55%)}
+.orb1{width:28rem;height:28rem;top:-8rem;left:-8rem;background:radial-gradient(circle,rgba(155,107,255,.95) 0,rgba(155,107,255,.18) 42%,transparent 72%);animation-duration:26s}
+.orb2{width:24rem;height:24rem;top:10%;right:-7rem;background:radial-gradient(circle,rgba(86,199,255,.9) 0,rgba(86,199,255,.18) 44%,transparent 72%);animation-name:drift-alt;animation-duration:30s}
+.orb3{width:20rem;height:20rem;bottom:6%;left:10%;background:radial-gradient(circle,rgba(255,116,200,.8) 0,rgba(255,116,200,.18) 42%,transparent 72%);animation-duration:28s}
+.orb4{width:18rem;height:18rem;right:10%;bottom:-4rem;background:radial-gradient(circle,rgba(69,240,212,.85) 0,rgba(69,240,212,.16) 42%,transparent 72%);animation-name:drift-alt;animation-duration:22s}
+.card,.box,a.btn,.check{position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.18),rgba(255,255,255,.08));box-shadow:inset 0 1px 0 rgba(255,255,255,.2),inset 0 -1px 0 rgba(255,255,255,.04),var(--shadow-soft);backdrop-filter:blur(18px) saturate(135%);-webkit-backdrop-filter:blur(18px) saturate(135%)}
+.card::before,.box::before,a.btn::before,.check::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 28%,rgba(255,255,255,.08));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;opacity:.72}
+.card{position:relative;z-index:1;width:100%;max-width:560px;text-align:center;padding:42px 30px;border-radius:32px;box-shadow:inset 0 1px 0 rgba(255,255,255,.22),inset 0 -1px 0 rgba(255,255,255,.06),var(--shadow);animation:reveal-up .8s cubic-bezier(.21,1.02,.26,.99) both}
+.check{width:90px;height:90px;margin:0 auto 20px;border-radius:50%;display:grid;place-items:center;font-size:42px;background:linear-gradient(180deg,rgba(34,197,94,.26),rgba(34,197,94,.15));border:1px solid rgba(134,239,172,.4);box-shadow:0 18px 45px rgba(34,197,94,.16),var(--shadow-soft);animation:pop-in .75s cubic-bezier(.21,1.02,.26,.99) both .12s}
+.check::after{content:"";position:absolute;inset:-14px;border-radius:inherit;border:1px solid rgba(134,239,172,.18);animation:pulse-ring 2.4s ease-out infinite .75s}
+h1{font-size:clamp(2rem,7vw,3rem);line-height:1.02;letter-spacing:-.05em;margin:0 0 12px;text-shadow:0 18px 45px rgba(8,15,37,.42);background:linear-gradient(120deg,#fff 0%,#dbeafe 24%,#bfdbfe 48%,#d8b4fe 74%,#67e8f9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+p{color:var(--muted);line-height:1.8;font-size:15px;margin:0 0 10px}
+.box{margin:22px 0 4px;padding:16px 16px;border-radius:20px;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.08));text-align:left;font-size:14px;line-height:1.8;animation:reveal-up .85s cubic-bezier(.21,1.02,.26,.99) both .2s}
+a.btn{display:inline-block;margin-top:12px;padding:14px 24px;border-radius:18px;color:#fff;text-decoration:none;font-weight:900;background:linear-gradient(120deg,rgba(139,92,246,.96),rgba(56,189,248,.92),rgba(255,116,200,.88));background-size:200% 200%;transition:transform .24s ease,filter .24s ease,box-shadow .24s ease,background-position .45s ease;animation:reveal-up .9s cubic-bezier(.21,1.02,.26,.99) both .28s}
+a.btn::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:34%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-24deg);transition:transform .55s ease;pointer-events:none}
+a.btn:hover{transform:translateY(-3px);filter:brightness(1.08);background-position:100% 50%;box-shadow:0 18px 44px rgba(93,74,214,.36)}
+a.btn:hover::after{transform:translateX(320%) skewX(-24deg)}
+a.btn:active{transform:translateY(1px) scale(.985)}
+.visitor-counter{margin-top:18px;color:var(--muted);font-size:12px;animation:reveal-up .95s cubic-bezier(.21,1.02,.26,.99) both .36s}
 .visitor-counter img{height:20px;vertical-align:middle}
 @supports not ((-webkit-backdrop-filter:blur(18px)) or (backdrop-filter:blur(18px))){
-  .card,.box,a.btn,.check{background:var(--fallback);border-color:rgba(226,232,240,.28)}
+  .card,.box,a.btn,.check{background:var(--fallback);border-color:rgba(226,232,240,.22)}
 }
-@media(max-width:520px){.card{padding:30px 20px;border-radius:20px}}
+@media(max-width:520px){.card{padding:32px 22px;border-radius:26px}.check{width:82px;height:82px;font-size:38px}.box,a.btn{border-radius:18px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+@keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(30px,45px,0) scale(1.06)}100%{transform:translate3d(-18px,78px,0) scale(.96)}}
+@keyframes drift-alt{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-35px,-18px,0) scale(.94)}100%{transform:translate3d(24px,42px,0) scale(1.08)}}
+@keyframes reveal-up{0%{opacity:0;transform:translateY(24px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes pop-in{0%{opacity:0;transform:scale(.7) translateY(10px)}65%{opacity:1;transform:scale(1.06) translateY(0)}100%{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes pulse-ring{0%{opacity:.9;transform:scale(.92)}75%{opacity:0;transform:scale(1.22)}100%{opacity:0;transform:scale(1.22)}}
 </style>
 </head>
 <body>
+<div class="bg-orbs" aria-hidden="true"><span class="orb orb1"></span><span class="orb orb2"></span><span class="orb orb3"></span><span class="orb orb4"></span></div>
 <main class="card">
   <div class="check">✅</div>
   <h1>Registration Received!</h1>
