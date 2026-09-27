@@ -107,7 +107,7 @@ footer{text-align:center;color:#dbeafe;font-size:11px;padding:22px 20px;border-r
   button[type=submit]{border-color:rgba(226,232,240,.24)}
 }
 @media(max-width:760px){.container{padding:22px 14px calc(56px + env(safe-area-inset-bottom));gap:18px}.hero{padding:34px 20px 28px;border-radius:24px}.card,footer{padding:22px;border-radius:22px}.plans{grid-template-columns:1fr}.plan .box{min-height:132px;padding:18px 14px}.promo img{border-radius:24px}}
-@media(max-width:520px){h1{font-size:clamp(2.5rem,13vw,3.5rem)}.grid{grid-template-columns:1fr}.number{font-size:28px}.plan .tag,.popular-badge{top:12px}.plan .tag{left:14px}.popular-badge{right:14px}.popular-plan .tag{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.plan .box,.popular-plan .box{padding-top:48px}.hero p{font-size:.98rem}.plan .box,.feature,.perks li,.model-list li,input,button[type=submit]{border-radius:18px}}
+@media(max-width:520px){h1{font-size:clamp(2.5rem,13vw,3.5rem)}.grid{grid-template-columns:1fr}.number{font-size:28px}.plan .tag,.popular-badge{top:12px}.plan .tag{left:14px}.popular-badge{right:14px}.popular-plan .tag{display:none}.plan .box,.popular-plan .box{padding-top:48px}.hero p{font-size:.98rem}.plan .box,.feature,.perks li,.model-list li,input,button[type=submit]{border-radius:18px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.orb{transform:none!important}}
 @keyframes drift{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(30px,45px,0) scale(1.06)}100%{transform:translate3d(-18px,78px,0) scale(.96)}}
 @keyframes drift-alt{0%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-35px,-18px,0) scale(.94)}100%{transform:translate3d(24px,42px,0) scale(1.08)}}
@@ -197,10 +197,10 @@ footer{text-align:center;color:#dbeafe;font-size:11px;padding:22px 20px;border-r
       <span class="box"><b>Quarterly</b><span class="amt">2,300 <span>ETB</span></span><small>3 months • Save vs monthly</small></span>
     </label>
     <label class="plan popular-plan">
-      <span class="tag">BEST VALUE</span>
+      <span class="tag" aria-hidden="true">BEST VALUE</span>
       <span class="popular-badge" aria-hidden="true">Popular</span>
       <input type="radio" name="planPick" value="Yearly — 8,000 ETB" data-plan="yearly" data-amount="8,000 ETB" checked>
-      <span class="box"><b>Yearly</b><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving<span class="sr-only"> • Popular plan</span></small></span>
+      <span class="box"><b>Yearly<span class="sr-only"> — Best value — Popular plan</span></b><span class="amt">8,000 <span>ETB</span></span><small>12 months • Biggest yearly saving</small></span>
     </label>
     <label class="plan">
       <span class="tag gold">PAY ONCE</span>
